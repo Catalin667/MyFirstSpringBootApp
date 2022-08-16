@@ -3,6 +3,7 @@ package myFirstApp.services;
 import myFirstApp.entities.Directory;
 import myFirstApp.entities.Teacher;
 import myFirstApp.repositories.DirectoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,7 +18,7 @@ import java.util.List;
 @Service
 public class DirectoryServices {
     private final DirectoryRepository directoryRepository;
-
+    @Autowired
     public DirectoryServices(DirectoryRepository directoryRepository) {
         this.directoryRepository = directoryRepository;
     }

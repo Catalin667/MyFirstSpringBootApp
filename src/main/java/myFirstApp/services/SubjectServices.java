@@ -1,26 +1,28 @@
 package myFirstApp.services;
 
+import myFirstApp.entities.PeriodStudy;
 import myFirstApp.entities.Subject;
-import myFirstApp.entities.Teacher;
 import myFirstApp.repositories.SubjectRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class SubjectServices {
     private final SubjectRepository subjectRepository;
 
-    public SubjectServices(SubjectRepository subjectRepository) {
+    @Autowired
+    public SubjectServices(SubjectRepository subjectRepository ) {
         this.subjectRepository = subjectRepository;
     }
 
-    public List<Subject> getAllSubjects() {
+      public List<Subject> getAllSubjects(){
         return subjectRepository.findAll();
-    }
-
+      }
 
     public void addNewSubject(Subject subject) {
         List<Subject> subjects = getAllSubjects();
@@ -55,6 +57,17 @@ public class SubjectServices {
         }
     }
 
+    @Transactional
+    public void addNewPeriodStudy(long subjectId, PeriodStudy periodStudy){
+        Subject subject = subjectRepository.findById(subjectId)
+                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exists."));
+        if(periodStudy!=null){
+            Set<PeriodStudy> periodStudies = subject.getPeriodsStudy();
+            periodStudies.add(periodStudy);
+            subject.setPeriodStudy(periodStudies);
+        }
+    }
+
     public void deleteSubject(long subjectId) {
         boolean bool = subjectRepository.existsById(subjectId);
         if (bool){
@@ -64,7 +77,6 @@ public class SubjectServices {
         }
         subjectRepository.findById(subjectId);
     }
-
     public Subject getSubjectById(long subjectId){
         return subjectRepository.findById(subjectId)
                 .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exists."));

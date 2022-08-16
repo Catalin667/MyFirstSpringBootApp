@@ -17,34 +17,18 @@ public class TeacherSubjectStudent implements Serializable {
     @Column(nullable = false)
     private int year;
 
-//    @JsonBackReference
-//    @JsonIgnore
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Teacher teacher;
 
-//    @JsonBackReference
-//    @JsonIgnore
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Subject subject;
 
-//    @JsonBackReference
-//    @JsonIgnore
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Student student;
 
 
     public TeacherSubjectStudent() {
     }
-
-//    public TeacherSubjectStudent(Teacher teacher, Subject subject, Student student, int year) {
-//        this.teacherSubjectStudentId.setTeacherId(teacher.getEmployeeId());
-//        this.teacherSubjectStudentId.setSubjectId(subject.getSubjectId());
-//        this.teacherSubjectStudentId.setStudentId(student.getStudentId());
-//        this.teacher = teacher;
-//        this.subject=subject;
-//        this.student=student;
-//        this.year = year;
-//    }
 
     public TeacherSubjectStudent(TeacherSubjectStudentId teacherSubjectStudentId, int year) {
         this.teacherSubjectStudentId = teacherSubjectStudentId;

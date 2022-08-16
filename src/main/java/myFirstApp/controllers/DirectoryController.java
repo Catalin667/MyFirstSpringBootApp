@@ -2,6 +2,7 @@ package myFirstApp.controllers;
 
 import myFirstApp.entities.Directory;
 import myFirstApp.services.DirectoryServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @RequestMapping(path="api/directory")
 public class DirectoryController {
     private final DirectoryServices directoryServices;
-
+    @Autowired
     public DirectoryController(DirectoryServices directoryServices) {
         this.directoryServices = directoryServices;
     }

@@ -17,16 +17,18 @@ public class PeriodStudyId implements Serializable {
     public PeriodStudyId(long subjectId) {
         this.subjectId = subjectId;
     }
+
     public PeriodStudyId(long periodStudyId,long subjectId) {
         this.periodStudyId = periodStudyId;
         this.subjectId = subjectId;
     }
 
-    public void setPeriodStudyId(long id){
-        this.periodStudyId=id;
-    }
     public long getPeriodStudyId() {
         return periodStudyId;
+    }
+
+    public void setPeriodStudyId(long periodStudyId) {
+        this.periodStudyId = periodStudyId;
     }
 
     public long getSubjectId() {
@@ -40,8 +42,7 @@ public class PeriodStudyId implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PeriodStudyId)) return false;
-        PeriodStudyId that = (PeriodStudyId) o;
+        if (!(o instanceof PeriodStudyId that)) return false;
         return getPeriodStudyId() == that.getPeriodStudyId() && getSubjectId() == that.getSubjectId();
     }
 
@@ -52,7 +53,7 @@ public class PeriodStudyId implements Serializable {
 
     @Override
     public String toString() {
-        return "PeriodStudingId{" +
+        return "PeriodStudyId{" +
                 "periodStudyId=" + periodStudyId +
                 ", subjectId=" + subjectId +
                 '}';

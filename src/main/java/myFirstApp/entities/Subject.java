@@ -3,6 +3,7 @@ package myFirstApp.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -33,9 +34,7 @@ public class Subject {
 
 
     @OneToMany(mappedBy = "subject" )
-    //, cascade = {CascadeType.PERSIST, CascadeType.MERGE}
-    private Set<PeriodStudy> periodsStudy;
-
+    private Set<PeriodStudy> periodsStudy = new HashSet<>();
 
     public Subject() {
     }
@@ -44,6 +43,10 @@ public class Subject {
         this.subjectName = subjectName;
         this.hoursCourseNumber = hoursCourseNumber;
         this.examNumber = examNumber;
+    }
+
+    public void setSubjectId(long subjectId) {
+        this.subjectId = subjectId;
     }
 
     public long getSubjectId() {
@@ -78,7 +81,7 @@ public class Subject {
         this.examNumber = examNumber;
     }
 
-    public Set<PeriodStudy> getPeriodStudy() {
+    public Set<PeriodStudy> getPeriodsStudy() {
         return periodsStudy;
     }
 
@@ -86,17 +89,20 @@ public class Subject {
         this.periodsStudy = periodsStudy;
     }
 
+    public void addANewPeriodStudy(PeriodStudy periodStudy){
+        this.periodsStudy.add(periodStudy);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Subject)) return false;
-        Subject subject = (Subject) o;
-        return getHoursCourseNumber() == subject.getHoursCourseNumber() && getExamNumber() == subject.getExamNumber() && getSubjectName().equals(subject.getSubjectName());
+        if (!(o instanceof Subject subject)) return false;
+        return getSubjectId() == subject.getSubjectId() && getHoursCourseNumber() == subject.getHoursCourseNumber() && getExamNumber() == subject.getExamNumber() && getSubjectName().equals(subject.getSubjectName()) && getTeacherSubjectStudents().equals(subject.getTeacherSubjectStudents()) && Objects.equals(periodsStudy, subject.periodsStudy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getSubjectName(), getHoursCourseNumber(), getExamNumber());
+        return Objects.hash(getSubjectId(), getSubjectName(), getHoursCourseNumber(), getExamNumber(), getTeacherSubjectStudents(), periodsStudy);
     }
 
     @Override
@@ -107,6 +113,7 @@ public class Subject {
                 ", hoursCourseNumber=" + hoursCourseNumber +
                 ", examNumber=" + examNumber +
                 ", teacherSubjectStudents=" + teacherSubjectStudents +
+                ", periodsStudy=" + periodsStudy +
                 '}';
     }
 }

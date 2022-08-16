@@ -2,6 +2,7 @@ package myFirstApp.controllers;
 
 import myFirstApp.entities.Teacher;
 import myFirstApp.services.TeacherServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @RequestMapping(path="api/teacher")
 public class TeacherController {
     private final TeacherServices teacherServices;
-
+    @Autowired
     public TeacherController(TeacherServices teacherServices) {
         this.teacherServices = teacherServices;
     }

@@ -2,21 +2,24 @@ package myFirstApp.services;
 
 import myFirstApp.entities.PeriodStudy;
 import myFirstApp.entities.PeriodStudyId;
-import myFirstApp.entities.Student;
 import myFirstApp.entities.Subject;
 import myFirstApp.repositories.PeriodStudyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @Service
 public class PeriodStudyServices {
+
     private final PeriodStudyRepository periodStudyRepository;
 
     private final SubjectServices subjectServices;
-
+    @Autowired
     public PeriodStudyServices(PeriodStudyRepository periodStudyRepository, SubjectServices subjectServices) {
         this.periodStudyRepository = periodStudyRepository;
         this.subjectServices = subjectServices;
@@ -35,14 +38,24 @@ public class PeriodStudyServices {
             }
         }
         if(subjectServices.checkIfExistsById(periodStudy.getPeriodStudyId().getSubjectId())) {
-            Subject subject = subjectServices.getSubjectById(periodStudy.getPeriodStudyId().getSubjectId());
-            System.out.println("PERIODSTUDY: "+periodStudy);
-            Set<PeriodStudy> periodsStudyForThisSubject = subject.getPeriodStudy();
-            periodsStudyForThisSubject.add(periodStudy);
-            subject.setPeriodStudy(periodsStudyForThisSubject);
             periodStudyRepository.save(periodStudy);
+            subjectServices.addNewPeriodStudy(periodStudy.getPeriodStudyId().getSubjectId(),periodStudy);
+             Subject subject = subjectServices.getSubjectById(periodStudy.getPeriodStudyId().getSubjectId());
+             periodStudy.setSubject(subject);
         }
     }
+
+    public Set<PeriodStudy> getPeriodStudyById(long subjectId){
+        List<PeriodStudy> periodsStudy = getAllPeriodsStudy();
+        Set<PeriodStudy> periodsStudyForThisSubject = new HashSet<>();
+        for(PeriodStudy p:periodsStudy){
+            if(p.getPeriodStudyId().getSubjectId() == subjectId){
+                periodsStudyForThisSubject.add(p);
+            }
+        }
+        return periodsStudyForThisSubject;
+    }
+
     @Transactional
     public void updateANewPeriodStudy(PeriodStudyId periodStudyId, String periodStudyName, String taxPerYear, String yearStudyingNumber) {
         PeriodStudy periodStudy = periodStudyRepository.findById(periodStudyId)

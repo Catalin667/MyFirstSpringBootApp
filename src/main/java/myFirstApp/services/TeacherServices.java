@@ -2,6 +2,7 @@ package myFirstApp.services;
 
 import myFirstApp.entities.Teacher;
 import myFirstApp.repositories.TeacherRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,7 +18,7 @@ import java.util.Optional;
 @Service
 public class TeacherServices {
     private final TeacherRepository teacherRepository;
-
+    @Autowired
     public TeacherServices(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }

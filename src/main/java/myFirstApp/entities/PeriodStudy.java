@@ -1,36 +1,14 @@
 package myFirstApp.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
-import org.hibernate.annotations.GeneratorType;
-
-//import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
-import static org.hibernate.annotations.GenerationTime.*;
+
 @Entity
 @Table(name = "period_study")
 public class PeriodStudy implements Serializable {
-//    @SequenceGenerator(
-//            name="period_study_sequence",
-//            sequenceName = "period_study_sequence",
-//            allocationSize = 1
-//    )
-//    @GeneratedValue(
-//            strategy  = GenerationType.SEQUENCE,
-//            generator = "period_study_sequence"
-//    )
-//    @Transient
-//    @GeneratedValue(strategy = GenerationTime.INSERT)
 
-    @Generated(GenerationTime.INSERT)
-//    @SequenceGenerator(name="period_study_sequence",sequenceName = "period_study_sequence",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "period_study_sequence")
-    @Column(updatable = false,unique = true)
-    @Transient
-    private long idHelp;
     @EmbeddedId
     private PeriodStudyId periodStudyId;
     @Column(nullable=false)
@@ -41,18 +19,21 @@ public class PeriodStudy implements Serializable {
     private int yearStudyNumber;
     @JsonIgnore
     @ManyToOne
-//    cascade = {CascadeType.PERSIST, CascadeType.MERGE}
     private Subject subject;
 
-    public PeriodStudy(){
+    public PeriodStudy() {
     }
 
-    public PeriodStudy(PeriodStudyId periodStudingId, String periodStudyName, int taxPerYear, int yearStudyNumber) {
-        this.periodStudyId = periodStudingId;
-        periodStudingId.setPeriodStudyId(idHelp);
+    public PeriodStudy(PeriodStudyId periodStudyId, String periodStudyName, double taxPerYear, int yearStudyNumber) {
+        this.periodStudyId = periodStudyId;
         this.periodStudyName = periodStudyName;
         this.taxPerYear = taxPerYear;
         this.yearStudyNumber = yearStudyNumber;
+        this.subject.setSubjectId(periodStudyId.getSubjectId());
+    }
+
+    public void setPeriodStudyId(PeriodStudyId periodStudyId) {
+        this.periodStudyId = periodStudyId;
     }
 
     public PeriodStudyId getPeriodStudyId() {
@@ -94,8 +75,7 @@ public class PeriodStudy implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PeriodStudy)) return false;
-        PeriodStudy that = (PeriodStudy) o;
+        if (!(o instanceof PeriodStudy that)) return false;
         return Double.compare(that.getTaxPerYear(), getTaxPerYear()) == 0 && getYearStudyNumber() == that.getYearStudyNumber() && getPeriodStudyId().equals(that.getPeriodStudyId()) && getPeriodStudyName().equals(that.getPeriodStudyName());
     }
 
@@ -111,7 +91,6 @@ public class PeriodStudy implements Serializable {
                 ", periodStudyName='" + periodStudyName + '\'' +
                 ", taxPerYear=" + taxPerYear +
                 ", yearStudyNumber=" + yearStudyNumber +
-                ", subject=" + subject +
                 '}';
     }
 }
