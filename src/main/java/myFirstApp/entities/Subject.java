@@ -36,6 +36,9 @@ public class Subject {
     @OneToMany(mappedBy = "subject" )
     private Set<PeriodStudy> periodsStudy = new HashSet<>();
 
+    @OneToMany(mappedBy = "subject", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<Exam> exams;
+
     public Subject() {
     }
 

@@ -88,4 +88,8 @@ public class PeriodStudyServices {
             throw new IllegalStateException(" Informations are wrong. Maybe one id are wrong.");
         }
     }
+
+    public boolean checkIfExistsById(PeriodStudyId periodStudyId){
+         return periodStudyRepository.existsById(periodStudyId);
+    }
 }

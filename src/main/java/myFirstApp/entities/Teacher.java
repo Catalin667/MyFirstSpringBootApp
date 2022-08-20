@@ -18,6 +18,9 @@ public class Teacher extends Employee {
     @OneToMany(mappedBy = "teacher" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<TeacherSubjectStudent> teacherSubjectStudents;
 
+    @OneToOne(mappedBy = "teacher" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Hall hall;
+
     public Teacher(){}
 
     public Teacher(String lastName, String firstName, String city, String phoneNumber, String email, LocalDate hireDate, double salary, String functionName, String specializations) {

@@ -1,29 +1,36 @@
 package myFirstApp.entities;
 
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="period_study_generator_sequence")
-public class PeriodStudyIdGenerator  {
+@Table(name="degree_id_generator")
+public class DegreeIdGenerator {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    public PeriodStudyIdGenerator(){}
+    public DegreeIdGenerator() {
+    }
 
-    public PeriodStudyIdGenerator(long id) {
+    public DegreeIdGenerator(long id) {
         this.id = id;
     }
 
     public long getId() {
-        return this.id;
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PeriodStudyIdGenerator that)) return false;
+        if (!(o instanceof DegreeIdGenerator that)) return false;
         return getId() == that.getId();
     }
 
@@ -34,7 +41,7 @@ public class PeriodStudyIdGenerator  {
 
     @Override
     public String toString() {
-        return "PeriodStudyIdGenerator{" +
+        return "DegreeIdGenerator{" +
                 "id=" + id +
                 '}';
     }

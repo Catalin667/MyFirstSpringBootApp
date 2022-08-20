@@ -58,6 +58,10 @@ public abstract class Employee {
         this.functionName = functionName;
     }
 
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
+    }
+
     public long getEmployeeId() {
         return employeeId;
     }

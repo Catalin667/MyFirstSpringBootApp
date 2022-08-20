@@ -1,16 +1,18 @@
 package myFirstApp.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="secretary")
 public class Secretary extends Employee{
     @Column(nullable = false)
     private int year;
+
+    @OneToMany(mappedBy = "secretary" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<Degree> degreeSet;
 
     public Secretary(){
 

@@ -43,6 +43,10 @@ public class Student {
     @OneToMany(mappedBy = "student" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<TeacherSubjectStudent> teacherSubjectStudents;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "student" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<StudentExam> studentExams;
+
     public Student(){
 
     }
