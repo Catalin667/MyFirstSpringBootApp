@@ -37,7 +37,7 @@ public class DegreeServices {
     @Transactional
     public Degree getADegreeById(DegreeId degreeId){
         return degreeRepository.findById(degreeId)
-                .orElseThrow(()->new IllegalStateException("Degree with id "+ degreeId + " does not exists.")) ;
+                .orElseThrow(()->new IllegalStateException("Degree with id "+ degreeId + " does not exist.")) ;
     }
 
     public void deleteADegree(DegreeId degreeId1) {

@@ -1,0 +1,178 @@
+{
+     "lastName":"Ionescu",
+       "firstName":"Andrei Ionut",
+        "age":"20",
+        "city":"Sibiu",
+        "phone":"0765/481/123",
+        "email":"ionescu_andrei234@yahoo.com",
+         "occupation":"student"
+},
+
+{
+     "lastName":"Popescu",
+       "firstName":"Marian",
+        "age":"20",
+        "city":"Brasov",
+        "phone":"0731/234/567",
+        "email":"popescumarian@email.com",
+         "occupation":"student"
+},
+
+INSERT INTO ELEV
+values(1,'Popescu','Marian',20,'Brasov','0731/234/567','popescumarian@email.com','student');
+
+INSERT INTO ELEV
+values(2,'Adam','Adina',21,'Bran','0724/675/517','adamadina@email.com','student');
+
+INSERT INTO ELEV
+values(3,'Marcu','Ionut',15,'Rasnov','0720/134/505','ionutmarcu@email.com','elev');
+
+INSERT INTO ELEV
+values(4,'Antonescu','Alexandndru',14,'Tohan','0728/224/160','alex23@email.com','elev');
+
+INSERT INTO ELEV
+values(5,'Simon','Mihai',19,'Brasov','0721/535/587','simonmihai@email.com','student');
+
+INSERT INTO ELEV
+values(6,'Dumitrescu','Codrut',12,'Brasov','0721/214/669','codrutdumitrescu@email.com','elev');
+
+INSERT INTO ELEV
+values(7,'Ardelean','Remus',27,'Harman','0720/291/517','remusardelean@email.com','avocat');
+
+INSERT INTO ELEV
+values(8,'Grigorescu','Mirela',32,'Brasov','0711/264/347','grigorescumirela@email.com',null);---oare merge??
+
+INSERT INTO ELEV
+values(9,'Adam','Florina',20,'Brasov','0721/232/569','adamflorina@email.com','student');
+
+INSERT INTO ELEV
+values(10,'Stan','Adela',18,'Brasov','0747/115/587','adelastan@email.com','elev');
+
+INSERT INTO ELEV
+values(11,'Anghelache','Loredana',24,'Brasov','0750/267/104','anghelacheloredana@email.com','student');
+
+INSERT INTO ELEV
+values(12,'Grigorescu','Gabriel',30,'Brasov','0732/124/937','gabrielgrigorescu@email.com','medic');
+
+INSERT INTO ELEV
+values(13,'Lungu','Anastasia',19,'Cristian','0751/030/517','anastasialungu@email.com','student');
+
+INSERT INTO ELEV
+values(14,'Marinescu','Gabriela',7,'Brasov','0771/244/097','marinescugabriela@email.com','elev');
+
+INSERT INTO ELEV
+values(15,'Bronescu','Miruna',20,'Rasnov','0751/239/567','bronescumiruna@email.com','student');
+
+INSERT INTO ELEV
+values(16,'Babes','Alexandru',15,'Ghimbav','0721/235/537','babesalexandru@email.com','elev');
+
+INSERT INTO ELEV
+values(17,'Bobes','Claudiu',43,'Rasnov','0735/134/577','bobesclaudiu@email.com','medic');
+
+INSERT INTO ELEV
+values(18,'Lupei','Maria',11,'Moieciu de Jos','0732/204/547','lupeimaria@email.com','elev');
+
+INSERT INTO ELEV
+values(19,'Ungureanu','Valeriu',16,'Brasov','0751/534/597','ungureanuvaleriu@email.com','elev');
+
+INSERT INTO ELEV
+values(20,'Pop','Ioana',7,'Sibiu','0751/232/597','ioanapop@email.com','elev');
+
+INSERT INTO ELEV
+values(21,'Albu','Gabriel',17,'Brasov','0751/284/167','gabrielalbu@email.com','elev');
+
+INSERT INTO ELEV
+values(22,'Balan','Matei',36,'Brasov','0753/213/632','mateibalan@email.com',null);
+
+INSERT INTO ELEV
+values(23,'Balan','Andreea',30,'Brasov','0721/914/585','andreeabalan@email.com','contabil');
+
+INSERT INTO ELEV
+values(24,'Ionescu','Raluca',27,'Rasnov','0731/390/567','ralucaionescu@email.com','profesor');
+
+INSERT INTO ELEV
+values(25,'Brandusa','Andreea',19,'Bran','0737/334/969','andreeabrandusa@email.com','student');
+
+INSERT INTO ELEV
+values(26,'Sara','Ioana',21,'Brasov','0721/256/667','saraioana@email.com',null);
+
+INSERT INTO ELEV
+values(27,'Dumitru','Diana',30,'Brasov','0771/764/568','dianadumitru@email.com',null);
+
+INSERT INTO ELEV
+values(28,'Hodosan','Raluca',19,'Rasnov','0721/564/982','ralucahodosan@email.com','student');
+
+INSERT INTO ELEV
+values(29,'Sora','Andreea',20,'Brasov','0731/234/567','andreeasora@email.com','student');
+
+INSERT INTO ELEV
+values(30,'Mirea','Oana',19,'Brasov','0756/882/569','oanamirea@email.com','student');
+
+INSERT INTO ELEV
+values(31,'Popicu','Calin',19,'Zarnesti','0751/245/537','calinpopicu@email.com','student');
+
+INSERT INTO ELEV
+values(32,'Stefan','Maria',20,'Brasov','0771/994/523','mariastefan@email.com','student');
+
+INSERT INTO ELEV
+values(33,'Dragutu','Diana',35,'Brasov','0731/234/567','dianadragutu@email.com','contabil');
+
+INSERT INTO ELEV
+values(34,'Proca','Ionut',20,'Zarnesti','0757/239/960','ionutproca@email.com','notar');
+
+INSERT INTO ELEV
+values(35,'Ionescu','Rebeca',15,'Brasov','0745/367/555','rebecaionescu@email.com','elev');
+
+INSERT INTO ELEV
+values(36,'Chichioaca','Madalina',22,'Tohan','0731/937/100','madalinachicioaca@email.com','student');
+
+INSERT INTO ELEV
+values(37,'Boboc','Florin',8,'Brasov','0721/275/180','florinpopescu@email.com','elev');
+
+INSERT INTO ELEV
+values(38,'Cafadaru','Andrada',19,'Rasnov','0746/814/969','andradacafadaru@email.com','student');
+
+INSERT INTO ELEV
+values(39,'Banica','Ionut',21,'Brasov','0771/204/663','banicaionut@email.com','student');
+
+INSERT INTO ELEV
+values(40,'Sofei','Andrei',20,'Brasov','0740/574/460','andreisofei@email.com','student');
+
+INSERT INTO ELEV
+values(41,'Nicolescu','Andrei',20,'Brasov','0734/247/675','andreinicolescu@email.com','student');
+
+INSERT INTO ELEV
+values(42,'Beteringhe','Elena',22,'Tohan','0720/889/109','Elenabeteringhe@email.com','student');
+
+INSERT INTO ELEV
+values(43,'Neagu','Ionut',20,'Brasov','0751/278/975','neaguionut@email.com','student');
+
+INSERT INTO ELEV
+values(44,'Bujor','Andrada',19,'Rasnov','0726/894/962','andradabujor@email.com','student');
+
+INSERT INTO ELEV
+values(45,'Banica','Florin',21,'Brasov','0721/931/653','banicaflorin@email.com','student');
+
+INSERT INTO ELEV
+values(46,'Duta','Mihai',20,'Brasov','0734/771/061','mihaiduta@email.com','student');
+
+INSERT INTO ELEV
+values(47,'Iancu','Rebeca',20,'Brasov','0739/372/567','iancurebeca@email.com','student');
+
+INSERT INTO ELEV
+values(48,'Rus','Mara',15,'Brasov','0726/760/515','mararus@email.com','elev');
+
+INSERT INTO ELEV
+values(49,'Militaru','Grigore',22,'Tohan','0726/837/109','grigoremilitaru@email.com','student');
+
+INSERT INTO ELEV
+values(50,'Boboc','Florin',8,'Brasov','0721/275/180','florinaboboc@email.com','elev');
+
+INSERT INTO ELEV
+values(51,'Suciu','Sanziana',19,'Rasnov','0725/312/367','suciusanziana@email.com','student');
+
+INSERT INTO ELEV
+values(52,'Szekely','Marina',21,'Brasov','0751/333/123','MarinaSzekely@email.com','student');
+
+INSERT INTO ELEV
+values(53,'Neagoe','Magdalena',20,'Brasov','0743/271/439','MagdalenaNeagoe@email.com','student');

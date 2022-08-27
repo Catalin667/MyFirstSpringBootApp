@@ -59,7 +59,7 @@ public class PeriodStudyServices {
     @Transactional
     public void updateANewPeriodStudy(PeriodStudyId periodStudyId, String periodStudyName, String taxPerYear, String yearStudyingNumber) {
         PeriodStudy periodStudy = periodStudyRepository.findById(periodStudyId)
-                .orElseThrow(()->new IllegalStateException("Student with id "+ periodStudyId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Student with id "+ periodStudyId + " does not exist."));
 
         if(periodStudyName!=null && periodStudyName.length()>0 && periodStudyName.equals(periodStudy.getPeriodStudyName())){
             periodStudy.setPeriodStudyName(periodStudyName);

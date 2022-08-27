@@ -40,7 +40,7 @@ public class TeacherServices {
     @Transactional
     public void updateATeacher(long teacherId, String lastName, String firstName, String city, String phoneNumber, String email, String hireDate, String salary, String specializations) {
         Teacher teacher = teacherRepository.findById(teacherId)
-                .orElseThrow(()->new IllegalStateException("Teacher with id "+ teacherId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Teacher with id "+ teacherId + " does not exist."));
 
         if(lastName!=null && lastName.length()>0&& !lastName.equals(teacher.getLastName())){
             teacher.setLastName(lastName);
@@ -95,13 +95,13 @@ public class TeacherServices {
         if(teacherExists){
             teacherRepository.deleteById(teacherId);
         }else{
-            throw new IllegalStateException("Teacher with id "+ teacherId + " does not exists!");
+            throw new IllegalStateException("Teacher with id "+ teacherId + " does not exist!");
         }
     }
 
     public Teacher getTeacherById(long id){
         return teacherRepository.findById(id)
-                .orElseThrow(()->new IllegalStateException("Teacher with id "+ id + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Teacher with id "+ id + " does not exist."));
     }
 
     public boolean checkIfExistsById(long id){

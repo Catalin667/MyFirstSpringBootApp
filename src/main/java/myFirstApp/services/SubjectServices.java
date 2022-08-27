@@ -36,7 +36,7 @@ public class SubjectServices {
     @Transactional
     public void updateASubject(long subjectId, String subjectName, String hoursCourseNumber, String examsNumber) {
         Subject subject = subjectRepository.findById(subjectId)
-                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exist."));
 
         if(subjectName!=null && subjectName.length()>0 && !subjectName.equals(subject.getSubjectName())){
             subject.setSubjectName(subjectName);
@@ -60,7 +60,7 @@ public class SubjectServices {
     @Transactional
     public void addNewPeriodStudy(long subjectId, PeriodStudy periodStudy){
         Subject subject = subjectRepository.findById(subjectId)
-                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exist."));
         if(periodStudy!=null){
             Set<PeriodStudy> periodStudies = subject.getPeriodsStudy();
             periodStudies.add(periodStudy);
@@ -73,13 +73,13 @@ public class SubjectServices {
         if (bool){
             subjectRepository.deleteById(subjectId);
         }else{
-            throw new IllegalStateException("Subject with id "+ subjectId + " does not exists!");
+            throw new IllegalStateException("Subject with id "+ subjectId + " does not exist!");
         }
         subjectRepository.findById(subjectId);
     }
     public Subject getSubjectById(long subjectId){
         return subjectRepository.findById(subjectId)
-                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Subject with id "+ subjectId + " does not exist."));
     }
 
     public boolean checkIfExistsById(long subjectId) {

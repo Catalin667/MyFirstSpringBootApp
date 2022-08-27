@@ -43,14 +43,14 @@ public class Teacher extends Employee {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Teacher)) return false;
-        Teacher teacher = (Teacher) o;
-        return getSpecializations().equals(teacher.getSpecializations());
+        if (!(o instanceof Teacher teacher)) return false;
+        if (!super.equals(o)) return false;
+        return Objects.equals(getSpecializations(), teacher.getSpecializations());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getSpecializations());
+        return Objects.hash(super.hashCode(), getSpecializations());
     }
 
     @Override

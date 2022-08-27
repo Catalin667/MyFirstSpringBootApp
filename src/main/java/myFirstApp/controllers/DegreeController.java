@@ -41,7 +41,7 @@ public class DegreeController {
             degreeIdGeneratorServices.generateANewValue(degreeIdGenerator);
             degreeServices.registerANewDegree(degree);
         }else{
-            throw new IllegalStateException("This id does not exists.");
+            throw new IllegalStateException("This id does not exist.");
         }
     }
 

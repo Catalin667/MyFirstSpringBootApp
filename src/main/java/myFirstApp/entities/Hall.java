@@ -26,16 +26,23 @@ public class Hall {
 
     @Transient
     private long teacherId;
+
+    @Transient
+    private long scheduleId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employeeId")
     private Teacher teacher;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Schedule schedule;
+
     public Hall(){}
 
-    public Hall(String nameHall, int floor,long teacherId) {
+    public Hall(String nameHall, int floor,long teacherId,long scheduleId) {
         this.nameHall = nameHall;
         this.floor = floor;
         this.teacherId = teacherId;
+        this.scheduleId = scheduleId;
     }
 
     public long getTeacherId() {
@@ -76,6 +83,22 @@ public class Hall {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    public long getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(long scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+    public Schedule getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
     }
 
     @Override

@@ -4,6 +4,7 @@ import myFirstApp.entities.*;
 import myFirstApp.services.ExamServices;
 import myFirstApp.services.StudentExamServices;
 import myFirstApp.services.StudentServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class StudentExamController {
     private final ExamServices examServices;
 
     private final StudentServices studentServices;
-
+    @Autowired
     public StudentExamController(StudentExamServices studentExamServices, ExamServices examServices, StudentServices studentServices) {
         this.studentExamServices = studentExamServices;
         this.examServices = examServices;

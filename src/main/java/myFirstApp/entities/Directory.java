@@ -1,10 +1,11 @@
 package myFirstApp.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="directory")
@@ -15,6 +16,10 @@ public class Directory extends Teacher{
     private int startYear;
     @Column(nullable = false)
     private int stopYear;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "directory" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<Contest>contests;
 
     public Directory() {
 

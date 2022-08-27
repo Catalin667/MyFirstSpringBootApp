@@ -41,7 +41,7 @@ public class ExamController {
             examIdGeneratorServices.generateANewValue(examIdGenerator);
             examServices.registerANewExam(exam);
         }else{
-            throw new IllegalStateException("Subject with this id does not exists.");
+            throw new IllegalStateException("Subject with this id does not exist.");
         }
     }
 

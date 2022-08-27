@@ -47,6 +47,10 @@ public class Student {
     @OneToMany(mappedBy = "student" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<StudentExam> studentExams;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "student" , cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<ContestStudent>contests;
+
     public Student(){
 
     }

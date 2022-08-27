@@ -38,7 +38,7 @@ public class StudentServices {
     @Transactional
     public void updateStudent(long studentId, String lastName, String firstName, String city, String email, String ocupation, String phoneNumber) {
         Student student = studentRepository.findById(studentId)
-                .orElseThrow(()->new IllegalStateException("Student with id "+ studentId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Student with id "+ studentId + " does not exist."));
 
         if(lastName!=null && lastName.length()>0&& !lastName.equals(student.getLastName())){
             student.setLastName(lastName);
@@ -70,14 +70,14 @@ public class StudentServices {
         if (bool){
             studentRepository.deleteById(studentId);
         }else{
-            throw new IllegalStateException("Student with id "+ studentId + " does not exists!");
+            throw new IllegalStateException("Student with id "+ studentId + " does not exist!");
         }
         studentRepository.findById(studentId);
     }
 
     public Student getStudentById(long studentId){
         return studentRepository.findById(studentId)
-                .orElseThrow(()->new IllegalStateException("Student with id "+ studentId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Student with id "+ studentId + " does not exist."));
     }
 
     public boolean checkIfExistsById(long studentId) {

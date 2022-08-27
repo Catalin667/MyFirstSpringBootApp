@@ -43,7 +43,7 @@ public class ExamServices {
 
     public Exam getExamById(ExamId examId){
         return examRepository.findById(examId)
-                .orElseThrow(()->new IllegalStateException("Exam with id "+ examId + " does not exists.")) ;
+                .orElseThrow(()->new IllegalStateException("Exam with id "+ examId + " does not exist.")) ;
     }
 
     public void deleteAnExam(ExamId examFullId) {

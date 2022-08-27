@@ -1,5 +1,6 @@
 package myFirstApp.services;
 
+import myFirstApp.entities.Contest;
 import myFirstApp.entities.Directory;
 import myFirstApp.entities.Teacher;
 import myFirstApp.repositories.DirectoryRepository;
@@ -41,7 +42,7 @@ public class DirectoryServices {
     @Transactional
     public void updateADirectory(long directoryId, String lastName, String firstName, String city, String phoneNumber, String email, String hireDate, String salary, String startYear, String stopYear) {
         Directory directory = directoryRepository.findById(directoryId)
-                .orElseThrow(()->new IllegalStateException("Directory with id "+ directoryId + " does not exists."));
+                .orElseThrow(()->new IllegalStateException("Directory with id "+ directoryId + " does not exist."));
 
         if(lastName!=null && lastName.length()>0&& !lastName.equals(directory.getLastName())){
             directory.setLastName(lastName);
@@ -116,7 +117,17 @@ public class DirectoryServices {
         if(directoryExists){
             directoryRepository.deleteById(directoryId);
         }else{
-            throw new IllegalStateException("Directory with id "+ directoryId + " does not exists!");
+            throw new IllegalStateException("Directory with id "+ directoryId + " does not exist!");
         }
     }
+
+    public Directory getADirectoryById(long directoryId){
+        return  directoryRepository.findById(directoryId)
+                .orElseThrow(()->new IllegalStateException("Directory with id "+ directoryId + " does not exist.")) ;
+    }
+    public boolean checkIfADirectoryExistsById(long directoryId){
+        return directoryRepository.existsById(directoryId);
+    }
+
+
 }

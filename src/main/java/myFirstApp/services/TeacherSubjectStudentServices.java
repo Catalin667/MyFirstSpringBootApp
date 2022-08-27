@@ -54,7 +54,7 @@ public class TeacherSubjectStudentServices {
     @Transactional
     public void update(TeacherSubjectStudentId tss, String year) {
         TeacherSubjectStudent objById = teacherSubjectStudentRepository.findById(tss)
-                .orElseThrow(()->new IllegalStateException("Teacher,subject or student with this id does not exists, or informations are wrong."));
+                .orElseThrow(()->new IllegalStateException("Teacher,subject or student with this id does not exist, or informations are wrong."));
 
         if(year!=null && year.length()>0){
             int yearInt = Integer.parseInt(year);
@@ -69,7 +69,7 @@ public class TeacherSubjectStudentServices {
         if(bool){
             teacherSubjectStudentRepository.deleteById(tss);
         }else{
-            throw new IllegalStateException("Teacher,subject or student with this id does not exists, or informations are wrong.");
+            throw new IllegalStateException("Teacher,subject or student with this id does not exist, or informations are wrong.");
         }
     }
 }

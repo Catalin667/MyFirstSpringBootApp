@@ -1,0 +1,203 @@
+{
+     "lastName":"Popescu",
+     "firstName":"Ioana",
+     "city":"Brasov",
+     "phoneNumber":"0742/123/456",
+     "email":"popescuioana@yahoo.com",
+     "hireDate":"12-09-2009",
+     "salary":"5067.67",
+     "functionName":"profesor",
+     "specializations":"Canto muzica pop, vioara"
+},
+
+{
+     "lastName":"Cojocaru",
+     "firstName":"Ioana",
+     "city":"Brasov",
+     "phoneNumber":"0742/784/932",
+     "email":"CojocaruIoana@gmail.com",
+     "hireDate":"02-05-2015",
+     "salary":"8034.34",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Sidonia",
+     "firstName":"Magdalena",
+     "city":"Cristian",
+     "phoneNumber":"0722/535/132",
+     "email":"magdalenaSidonia@gmail.com",
+     "hireDate":"12-05-2016",
+     "salary":"7378.34",
+     "functionName":"profesor",
+     "specializations":"Muzica pop"
+},
+
+{
+     "lastName":"Macavei",
+     "firstName":"Mariana",
+     "city":"Codlea",
+     "phoneNumber":"0734/257/233",
+     "email":"MacaveiMariana@gmail.com",
+     "hireDate":"12-05-2016",
+     "salary":"7378.34",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Marin",
+     "firstName":"Flavius",
+     "city":"Bucuresti",
+     "phoneNumber":"0735/669/738",
+     "email":"MacaveiFlavius@gmail.com",
+     "hireDate":"25-05-2016",
+     "salary":"7378.34",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Opris",
+     "firstName":"Adriana",
+     "city":"Sibiu",
+     "phoneNumber":"0211/706/070",
+     "email":"OprisAdriana@gmail.com",
+     "hireDate":"28-05-2016",
+     "salary":"9067.51",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Tudorache",
+     "firstName":"Paula",
+     "city":"Sacele",
+     "phoneNumber":"0724/573/986",
+     "email":"TudorachePaula@gmail.com",
+     "hireDate":"22-05-2016",
+     "salary":"9067.51",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Bejenariu",
+     "firstName":"Malina",
+     "city":"Brasov",
+     "phoneNumber":"0724/515/131",
+     "email":"BejenariuMalina@gmail.com",
+     "hireDate":"12-05-2016",
+     "salary":"9067.51",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Marinescu",
+     "firstName":"Ioana",
+     "city":"Brasov",
+     "phoneNumber":"0743/338/841",
+     "email":"MarinescuIoana@gmail.com",
+     "hireDate":"12-05-2016",
+     "salary":"7378.34",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Eftem",
+     "firstName":"Georgescu",
+     "city":"Sibiu",
+     "phoneNumber":"0743/338/841",
+     "email":"georgescueftem@gmail.com",
+     "hireDate":"15-05-2016",
+     "salary":"1345.79",
+     "functionName":"profesor",
+     "specializations":"Muzica,Actorie"
+},
+
+{
+     "lastName":"Ieronim",
+     "firstName":"Sebastian",
+     "city":"Brasov",
+     "phoneNumber":"0742/933/878",
+     "email":"SebastianIeronim@gmail.com",
+     "hireDate":"16-05-2016",
+     "salary":"7378.34",
+     "functionName":"profesor",
+     "specializations":"Actorie"
+},
+
+{
+     "lastName":"Dumitru",
+     "firstName":"Rafael",
+     "city":"Ghimbav",
+     "phoneNumber":"0721/232/162",
+     "email":"DumitruRafael@gmail.com",
+     "hireDate":"18-05-2016",
+     "salary":"9067.51",
+     "functionName":"profesor",
+     "specializations":"Arte"
+},
+
+{
+     "lastName":"Cornel",
+     "firstName":"Cristi",
+     "city":"Sacele",
+     "phoneNumber":"0721/300/801",
+     "email":"CornelCristi@gmail.com",
+     "hireDate":"17-05-2016",
+     "salary":"16378.34",
+     "functionName":"profesor",
+     "specializations":"Actorie,Arte"
+},
+{
+     "lastName":"Ieronim",
+     "firstName":"Filip",
+     "city":"Brasov",
+     "phoneNumber":"0750/101/240",
+     "email":"IeronimFilip@gmail.com",
+     "hireDate":"19-05-2016",
+     "salary":"16378.34",
+     "functionName":"profesor",
+     "specializations":"Actorie,Arte"
+},
+
+{
+     "lastName":"Teofil",
+     "firstName":"Toma",
+     "city":"Brasov",
+     "phoneNumber":"0756/201/404",
+     "email":"TeofilToma@gmail.com",
+     "hireDate":"13-05-2017",
+     "salary":"17378.34",
+     "functionName":"profesor",
+     "specializations":"Muzica,Actorie,Arte"
+},
+
+{
+     "lastName":"Popa",
+     "firstName":"Claudia",
+     "city":"Brasov",
+     "phoneNumber":"0713/486/743",
+     "email":"popaclaudia@gmail.com",
+     "hireDate":"03-05-2021",
+     "salary":"9034.34",
+     "functionName":"profesor",
+     "specializations":"Muzica"
+},
+
+{
+     "lastName":"Mihai",
+     "firstName":"Raluca",
+     "city":"Brasov",
+     "phoneNumber":"0753/112/749",
+     "email":"ralucamihai@gmail.com",
+     "hireDate":"04-01-2021",
+     "salary":"12034.34",
+     "functionName":"profesor",
+     "specializations":"Arte, Actorie"
+}
+
